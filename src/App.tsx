@@ -1,12 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import StoreNavbar from './components/StoreNavbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import List from './components/List';
+import Cart from './components/Cart';
 
 function App() {
   return (
     <div className="App">
-      <h1>app page</h1>
+      <StoreNavbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<List />} />
+          <Route path='/cart' element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
